@@ -5,11 +5,75 @@ import ReactDOM from 'react-dom/client';
 //   return <h2>My First Component</h2>;
 // }
 
+// function Greeting() {
+//   return (
+//     <div>
+//       <h2>My First Component</h2>;
+//     </div>
+//   );
+// }
+
+// function Greeting() {
+//   return (
+//     <div>
+//       <div>
+//         <h3>hello people</h3>
+//         <ul>
+//           <li>
+//             <a href="#">hello world</a>
+//           </li>
+//         </ul>
+//       </div>
+//       <h2>welcome onboard</h2>
+//     </div>
+//   );
+// }
+
+// function Greeting() {
+//   return (
+//     <section>
+//       <div>
+//         <h3>hello people</h3>
+//         <ul>
+//           <li>
+//             <a href="#">hello world</a>
+//           </li>
+//         </ul>
+//       </div>
+//       <h2>welcome onboard</h2>
+//     </section>
+//   );
+// }
+
+// function Greeting() {
+//   return (
+//     <React.Fragment>
+//       <div>
+//         <h3>hello people</h3>
+//         <ul>
+//           <li>
+//             <a href="#">hello world</a>
+//           </li>
+//         </ul>
+//       </div>
+//       <h2>welcome onboard</h2>
+//     </React.Fragment> shorthand <> & </>
+//   );
+// }
+
 function Greeting() {
   return (
-    <div>
-      <h2>My First Component</h2>;
-    </div>
+    <>
+      <div>
+        <h3>hello people</h3>
+        <ul>
+          <li>
+            <a href="#">hello world</a>
+          </li>
+        </ul>
+      </div>
+      <h2>welcome onboard</h2>
+    </>
   );
 }
 

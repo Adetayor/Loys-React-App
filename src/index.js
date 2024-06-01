@@ -82,9 +82,31 @@ import ReactDOM from 'react-dom/client';
 //   return (<h2>hello world</h2>);
 // }
 
+// function Greeting() {
+//   return <h2>hello world</h2>;
+// }
+
+// function Greeting() {
+//   return (
+//     <div>
+//       <h2>john doe</h2>
+//       <p>this is my message</p>
+//     </div>
+//   );
+// }
+
 function Greeting() {
-  return <h2>hello world</h2>;
+  return <div>
+    <Person/>
+    <Message/>
+  </div>;
 }
+
+const Person = () => <h2>john doe</h2>;
+const Message = () => {
+  return <p>this is my message</p>;
+};
+
 
 // function Greeting() {
 //   return React.createElement('h2', {}, 'hello world');

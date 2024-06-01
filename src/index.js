@@ -61,20 +61,29 @@ import ReactDOM from 'react-dom/client';
 //   );
 // }
 
+// function Greeting() {
+//   return (
+//     <>
+//       <div className='someValue'>
+//         <h3>hello people</h3>
+//         <ul>
+//           <li>
+//             <a href="#">hello world</a>
+//           </li>
+//         </ul>
+//       </div>
+//       <h2>welcome onboard</h2>
+//       <input type='text' name='' id='' />
+//     </>
+//   );
+// }
+
+// function Greeting() {
+//   return (<h2>hello world</h2>);
+// }
+
 function Greeting() {
-  return (
-    <>
-      <div>
-        <h3>hello people</h3>
-        <ul>
-          <li>
-            <a href="#">hello world</a>
-          </li>
-        </ul>
-      </div>
-      <h2>welcome onboard</h2>
-    </>
-  );
+  return <h2>hello world</h2>;
 }
 
 // function Greeting() {

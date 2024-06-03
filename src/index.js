@@ -95,23 +95,43 @@ import ReactDOM from 'react-dom/client';
 //   );
 // }
 
-function Greeting() {
-  return <div>
-    <Person/>
-    <Message/>
-  </div>;
-}
+// function Greeting() {
+//   return <div>
+//     <Person/>
+//     <Message/>
+//   </div>;
+// }
 
-const Person = () => <h2>john doe</h2>;
-const Message = () => {
-  return <p>this is my message</p>;
-};
+// const Person = () => <h2>john doe</h2>;
+// const Message = () => {
+//   return <p>this is my message</p>;
+// };
 
 
 // function Greeting() {
 //   return React.createElement('h2', {}, 'hello world');
 // }
 
+const BookList = () =>{
+  return <section>
+    <Book/>
+  </section>
+}
+
+const Book = () =>{
+  return <article>
+    <Image/>
+    <Title/>
+    <Author/>
+  </article>
+}
+
+const Image = () => <h2>image placeholder</h2>
+const Title = () => <h2>Book Title</h2>
+const Author = () => {
+  return <h3>Author</h3>;
+}
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-root.render(<Greeting />);
+// root.render(<Greeting />);
+root.render(<BookList />);

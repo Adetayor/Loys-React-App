@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import './index.css';
+
 // function Greeting() {
 //   return <h2>My First Component</h2>;
 // }
@@ -118,22 +120,35 @@ import ReactDOM from 'react-dom/client';
 //   </section>
 // }
 
-const BookList = () =>{
-  return <section>
-    <Book/>
-    <Book/>
-    <Book/>
-    <Book/>
-  </section>
-}
+// const BookList = () => {
+//   return <section>
+//     <Book/>
+//     <Book/>
+//     <Book/>
+//     <Book/>
+//   </section>
+// }
+
+const BookList = () => {
+  return (
+    <section class='booklist'>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
+};
 
 const Book = () =>{
-  return <article>
-    <Image/>
-    <Title/>
-    <Author/>
-  </article>
-}
+  return (
+    <article class='book'>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+}; 
 
 const Image = () => (
   <img

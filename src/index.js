@@ -112,8 +112,17 @@ import ReactDOM from 'react-dom/client';
 //   return React.createElement('h2', {}, 'hello world');
 // }
 
+// const BookList = () =>{
+//   return <section>
+//     <Book/>
+//   </section>
+// }
+
 const BookList = () =>{
   return <section>
+    <Book/>
+    <Book/>
+    <Book/>
     <Book/>
   </section>
 }
@@ -126,10 +135,16 @@ const Book = () =>{
   </article>
 }
 
-const Image = () => <h2>image placeholder</h2>
-const Title = () => <h2>Book Title</h2>
+const Image = () => (
+  <img
+    src="https://images-na.ssl-images-amazon.com/images/I/81SIQfF-aGL._AC_UL600_SR600,400_.jpg"
+    alt="Eruption: Following Jurassic Park"
+  />
+);
+// const Title = () => <h2>Book Title</h2>
+const Title = () => <h2>Title of the Book</h2>
 const Author = () => {
-  return <h3>Author</h3>;
+  return <h3>by Michael Crichton & James Patterson</h3>;
 }
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

@@ -140,34 +140,63 @@ const BookList = () => {
   );
 };
 
-const Book = () =>{
+// const Book = () => {
+//   return (
+//     <article className='book'>
+//       <Image />
+//       <Title />
+//       <Author />
+//     </article>
+//   );
+// }; 
+const author = 'Michael Crichton & James Patterson';
+const Book = () => {
+  const title = 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It';
   return (
-    <article class='book'>
-      <Image />
-      <Title />
-      <Author />
+    <article className="book">
+      <img 
+      src="./images/erupt.jpg" 
+      alt="Eruption: Following Jurassic Park" 
+      />
+      <h2>
+        {/* 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It' */}
+        {title}
+      </h2>
+      <h3>
+        {/* by Michael Crichton & James Patterson */}
+        {author}
+        {/* {author.toUpperCase()} */}
+      </h3>
+      {/* {<p>{let x = 6}</p>}
+      <p>{6 + 6}</p> */}
     </article>
   );
 }; 
 
-const Image = () => (
-  <img
-    // src="https://images-na.ssl-images-amazon.com/images/I/81SIQfF-aGL._AC_UL600_SR600,400_.jpg"
-    src="./images/erupt.jpg"  alt="Eruption: Following Jurassic Park"
-  />
-);
-// const Title = () => <h2>Book Title</h2>
-const Title = () => <h2>Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It </h2>
-const Author = () => {
-  const inlineHeadingStyles = { color: '#617d98', fontSize: '0.75rem', marginTop: '0.5rem' }
-  // return <h3 style={{color:'#617d98',fontSize:'0.75rem', marginTop:'0.5rem'}}>
-  //   by Michael Crichton & James Patterson</h3>;
+// const Image = () => (
+//   <img
+//     // src="https://images-na.ssl-images-amazon.com/images/I/81SIQfF-aGL._AC_UL600_SR600,400_.jpg"
+//     // src="./images/erupt.jpg"  alt="Eruption: Following Jurassic Park"
+//   />
+// );
+// // const Title = () => <h2>Book Title</h2>
+// const Title = () => 
+// {/* <h2>Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It </h2> */
+// };
+// const Author = () => {
+//   const inlineHeadingStyles = { 
+//     color: '#617d98', 
+//     fontSize: '0.75rem', 
+//     marginTop: '0.5rem', 
+//   };
+//   // return <h3 style={{color:'#617d98',fontSize:'0.75rem', marginTop:'0.5rem'}}>
+//   //   by Michael Crichton & James Patterson</h3>;
   
-return (
-    <h3 style={inlineHeadingStyles}>
-      by Michael Crichton & James Patterson</h3>
-  );
-};
+// return 
+// // (<h3 style={inlineHeadingStyles}>
+// //       by Michael Crichton & James Patterson</h3>
+// //   );
+// };
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 // root.render(<Greeting />);

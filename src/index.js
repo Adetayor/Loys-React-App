@@ -129,13 +129,35 @@ import './index.css';
 //   </section>
 // }
 
+const author = 'Michael Crichton & James Patterson';
+const title = 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It';
+const img= './images/erupt.jpg';
+
+// parameters
+const someFunc = (param1, param2) => {
+  console.log(param1, param2);
+};
+// arguments
+someFunc('job', 'developer');
+
+// const BookList = () => {
+//   return (
+//     <section className='booklist'>
+//       <Book />
+//       <Book />
+//       <Book />
+//       <Book />
+//     </section>
+//   );
+// };
+
 const BookList = () => {
   return (
-    <section class='booklist'>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+    <section className='booklist'>
+      {/* <Book job="developer" />
+      <Book title="random title" number={22} */}
+      <Book author={author} title={title} img={img} />
+      <Book author={author} title={title} img={img} />
     </section>
   );
 };
@@ -149,29 +171,49 @@ const BookList = () => {
 //     </article>
 //   );
 // }; 
-const author = 'Michael Crichton & James Patterson';
-const Book = () => {
-  const title = 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It';
+
+const Book = (props) => {
+  console.log(props);
   return (
     <article className="book">
-      <img 
-      src="./images/erupt.jpg" 
-      alt="Eruption: Following Jurassic Park" 
-      />
-      <h2>
-        {/* 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It' */}
-        {title}
-      </h2>
-      <h3>
-        {/* by Michael Crichton & James Patterson */}
-        {author}
-        {/* {author.toUpperCase()} */}
-      </h3>
-      {/* {<p>{let x = 6}</p>}
-      <p>{6 + 6}</p> */}
+      {/* <img src={img} alt={title}/>
+      <h2>{title}</h2>
+      <h3>{author}</h3>
+      <p>{props.job}</p>
+      <p>{props.title}</p>
+      <p>{props.number}</p>  */}
+      
+
+      <img src={props.img} alt={props.title}/>
+      <h2>{props.title}</h2>
+      <h3>{props.author}</h3>
     </article>
   );
 }; 
+
+// const author = 'Michael Crichton & James Patterson';
+// const Book = () => {
+//   const title = 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It';
+//   return (
+//     <article className="book">
+//       <img 
+//       src="./images/erupt.jpg" 
+//       alt="Eruption: Following Jurassic Park" 
+//       />
+//       <h2>
+//         {/* 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It' */}
+//         {title}
+//       </h2>
+//       <h3>
+//         {/* by Michael Crichton & James Patterson */}
+//         {author}
+//         {/* {author.toUpperCase()} */}
+//       </h3>
+//       {/* {<p>{let x = 6}</p>}
+//       <p>{6 + 6}</p> */}
+//     </article>
+//   );
+// }; 
 
 // const Image = () => (
 //   <img

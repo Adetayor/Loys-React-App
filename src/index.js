@@ -152,15 +152,22 @@ const Book = () =>{
 
 const Image = () => (
   <img
-    src="https://images-na.ssl-images-amazon.com/images/I/81SIQfF-aGL._AC_UL600_SR600,400_.jpg"
-    alt="Eruption: Following Jurassic Park"
+    // src="https://images-na.ssl-images-amazon.com/images/I/81SIQfF-aGL._AC_UL600_SR600,400_.jpg"
+    src="./images/erupt.jpg"  alt="Eruption: Following Jurassic Park"
   />
 );
 // const Title = () => <h2>Book Title</h2>
-const Title = () => <h2>Title of the Book</h2>
+const Title = () => <h2>Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It </h2>
 const Author = () => {
-  return <h3>by Michael Crichton & James Patterson</h3>;
-}
+  const inlineHeadingStyles = { color: '#617d98', fontSize: '0.75rem', marginTop: '0.5rem' }
+  // return <h3 style={{color:'#617d98',fontSize:'0.75rem', marginTop:'0.5rem'}}>
+  //   by Michael Crichton & James Patterson</h3>;
+  
+return (
+    <h3 style={inlineHeadingStyles}>
+      by Michael Crichton & James Patterson</h3>
+  );
+};
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 // root.render(<Greeting />);

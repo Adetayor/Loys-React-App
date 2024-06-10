@@ -129,16 +129,27 @@ import './index.css';
 //   </section>
 // }
 
-const author = 'Michael Crichton & James Patterson';
-const title = 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It';
-const img= './images/erupt.jpg';
-
-// parameters
-const someFunc = (param1, param2) => {
-  console.log(param1, param2);
+const firstBook = {
+  author: 'Michael Crichton & James Patterson',
+  title: 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It',
+  img: './images/erupt.jpg',
 };
-// arguments
-someFunc('job', 'developer');
+const secondBook = {
+  author: " Pete Hegseth",
+  title: "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+  img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+};
+
+// const author = 'Michael Crichton & James Patterson';
+// const title = 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It';
+// const img= './images/erupt.jpg';
+
+// // parameters
+// const someFunc = (param1, param2) => {
+//   console.log(param1, param2);
+// };
+// // arguments
+// someFunc('job', 'developer');
 
 // const BookList = () => {
 //   return (
@@ -156,8 +167,15 @@ const BookList = () => {
     <section className='booklist'>
       {/* <Book job="developer" />
       <Book title="random title" number={22} */}
-      <Book author={author} title={title} img={img} />
-      <Book author={author} title={title} img={img} />
+      <Book 
+        author={firstBook.author} 
+        title={firstBook.title} 
+        img={firstBook.img} 
+      />
+      <Book 
+        author={secondBook.author} 
+        title={secondBook.title} 
+        img={secondBook.img} />
     </section>
   );
 };
@@ -182,8 +200,7 @@ const Book = (props) => {
       <p>{props.job}</p>
       <p>{props.title}</p>
       <p>{props.number}</p>  */}
-      
-
+       
       <img src={props.img} alt={props.title}/>
       <h2>{props.title}</h2>
       <h3>{props.author}</h3>

@@ -164,18 +164,26 @@ const secondBook = {
 
 const BookList = () => {
   return (
-    <section className='booklist'>
+    <section className="booklist">
       {/* <Book job="developer" />
       <Book title="random title" number={22} */}
-      <Book 
-        author={firstBook.author} 
-        title={firstBook.title} 
-        img={firstBook.img} 
+      <Book
+        author={firstBook.author}
+        title={firstBook.title}
+        img={firstBook.img}
+      >
+        <p>
+          Lorem, Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Itaque repudiandae inventore eos qui animi sed iusto alias eius ea
+          sapiente.
+        </p>
+        <button>click me</button>
+      </Book>
+      <Book
+        author={secondBook.author}
+        title={secondBook.title}
+        img={secondBook.img}
       />
-      <Book 
-        author={secondBook.author} 
-        title={secondBook.title} 
-        img={secondBook.img} />
     </section>
   );
 };
@@ -190,18 +198,8 @@ const BookList = () => {
 //   );
 // }; 
 
-const Book = (props) => {
-  const { img, title, author } = props;
-  return (
-    <article className="book">  
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <h3>{author}</h3>
-    </article>
-  );
-}; 
-
-// const Book = ({img, title, author}) => {
+// const Book = (props) => {
+//   const { img, title, author } = props;
 //   return (
 //     <article className="book">  
 //       <img src={img} alt={title} />
@@ -211,14 +209,26 @@ const Book = (props) => {
 //   );
 // }; 
 
+const Book = ({img, title, author, children}) => {
+  return (
+    <article className="book">  
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h3>{author}</h3>
+      {children}
+    </article>
+  );
+}; 
+
 // const Book = (props) => {
 //   console.log(props);
-//   const { img, title, author } = props;
+//   const { img, title, author, children } = props;
 //   return (
 //     <article className="book">  
 //       <img src={img} alt={title} />
 //       <h2>{title}</h2>
 //       <h3>{author}</h3>
+//       {children}
 //     </article>
 //   );
 // }; 

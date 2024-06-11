@@ -190,23 +190,57 @@ const BookList = () => {
 //   );
 // }; 
 
-const Book = (props) => {
-  console.log(props);
+// const Book = (props) => {
+//   const { img, title, author } = props;
+//   return (
+//     <article className="book">  
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <h3>{author}</h3>
+//     </article>
+//   );
+// }; 
+
+const Book = ({img, title, author}) => {
   return (
-    <article className="book">
-      {/* <img src={img} alt={title}/>
+    <article className="book">  
+      <img src={img} alt={title} />
       <h2>{title}</h2>
       <h3>{author}</h3>
-      <p>{props.job}</p>
-      <p>{props.title}</p>
-      <p>{props.number}</p>  */}
-       
-      <img src={props.img} alt={props.title}/>
-      <h2>{props.title}</h2>
-      <h3>{props.author}</h3>
     </article>
   );
 }; 
+
+// const Book = (props) => {
+//   console.log(props);
+//   const { img, title, author } = props;
+//   return (
+//     <article className="book">  
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <h3>{author}</h3>
+//     </article>
+//   );
+// }; 
+
+// const Book = (props) => {
+//   console.log(props);
+//   return (
+//     <article className="book">
+//       {/* <img src={img} alt={title}/>
+//       <h2>{title}</h2>
+//       <h3>{author}</h3>
+//       <p>{props.job}</p>
+//       <p>{props.title}</p>
+//       <p>{props.number}</p>  */}
+       
+//       <img src={props.img} alt={props.title}/>
+//       <h2>{props.title}</h2>
+//       <h3>{props.author}</h3>
+//     </article>
+//   );
+// }; 
+
 
 // const author = 'Michael Crichton & James Patterson';
 // const Book = () => {

@@ -129,16 +129,28 @@ import './index.css';
 //   </section>
 // }
 
-const firstBook = {
-  author: 'Michael Crichton & James Patterson',
-  title: 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It',
-  img: './images/erupt.jpg',
-};
-const secondBook = {
+// const firstBook = {
+//   author: 'Michael Crichton & James Patterson',
+//   title: 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It',
+//   img: './images/erupt.jpg',
+// };
+// const secondBook = {
+//   author: " Pete Hegseth",
+//   title: "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+//   img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+// };
+
+const books = [
+  { author: 'Michael Crichton & James Patterson',
+    title: 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It',
+    img: './images/erupt.jpg',
+},
+{
   author: " Pete Hegseth",
   title: "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
   img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
-};
+}
+];
 
 // const author = 'Michael Crichton & James Patterson';
 // const title = 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It';
@@ -162,31 +174,68 @@ const secondBook = {
 //   );
 // };
 
+// const BookList = () => {
+//   return (
+//     <section className="booklist">
+//       <Book
+//         author={firstBook.author}
+//         title={firstBook.title}
+//         img={firstBook.img}
+//       ></Book>
+//       <Book
+//         author={secondBook.author}
+//         title={secondBook.title}
+//         img={secondBook.img}
+//       />
+//     </section>
+//   );
+// };
+
+const names = ['john', 'peter', 'susan'];
+const newNames = names.map((name) => {
+  return <h1>{name}</h1>;
+});
+console.log(newNames);
 const BookList = () => {
-  return (
-    <section className="booklist">
-      {/* <Book job="developer" />
-      <Book title="random title" number={22} */}
-      <Book
-        author={firstBook.author}
-        title={firstBook.title}
-        img={firstBook.img}
-      >
-        <p>
-          Lorem, Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Itaque repudiandae inventore eos qui animi sed iusto alias eius ea
-          sapiente.
-        </p>
-        <button>click me</button>
-      </Book>
-      <Book
-        author={secondBook.author}
-        title={secondBook.title}
-        img={secondBook.img}
-      />
-    </section>
-  );
+  return <section className='booklist'>{names}</section>;
 };
+      const Book = (props) => {
+        const { img, title, author } = props;
+        console.log(props);
+        return (
+          <article className="book">
+            <img src={img} alt={title} />
+            <h2>{title}</h2>
+            <h4>{author}</h4>
+          </article>
+    );
+};
+
+// const BookList = () => {
+//   return (
+//     <section className="booklist">
+//       {/* <Book job="developer" />
+//       <Book title="random title" number={22} */}
+//       <Book
+//         author={firstBook.author}
+//         title={firstBook.title}
+//         img={firstBook.img}
+//       >
+//         <p>
+//           Lorem, Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+//           Itaque repudiandae inventore eos qui animi sed iusto alias eius ea
+//           sapiente.
+//         </p>
+//         <button>click me</button>
+//       </Book>
+//       <Book
+//         author={secondBook.author}
+//         title={secondBook.title}
+//         img={secondBook.img}
+//       />
+//     </section>
+//   );
+// };
 
 // const Book = () => {
 //   return (
@@ -209,16 +258,16 @@ const BookList = () => {
 //   );
 // }; 
 
-const Book = ({img, title, author, children}) => {
-  return (
-    <article className="book">  
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <h3>{author}</h3>
-      {children}
-    </article>
-  );
-}; 
+// const Book = ({img, title, author, children}) => {
+//   return (
+//     <article className="book">  
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <h3>{author}</h3>
+//       {children}
+//     </article>
+//   );
+// }; 
 
 // const Book = (props) => {
 //   console.log(props);

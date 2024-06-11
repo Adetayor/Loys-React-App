@@ -190,18 +190,8 @@ const BookList = () => {
 //   );
 // }; 
 
-// const Book = (props) => {
-//   const { img, title, author } = props;
-//   return (
-//     <article className="book">  
-//       <img src={img} alt={title} />
-//       <h2>{title}</h2>
-//       <h3>{author}</h3>
-//     </article>
-//   );
-// }; 
-
-const Book = ({img, title, author}) => {
+const Book = (props) => {
+  const { img, title, author } = props;
   return (
     <article className="book">  
       <img src={img} alt={title} />
@@ -210,6 +200,16 @@ const Book = ({img, title, author}) => {
     </article>
   );
 }; 
+
+// const Book = ({img, title, author}) => {
+//   return (
+//     <article className="book">  
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <h3>{author}</h3>
+//     </article>
+//   );
+// }; 
 
 // const Book = (props) => {
 //   console.log(props);

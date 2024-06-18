@@ -420,17 +420,17 @@ import './index.css';
 // };
 
 //Proper List
-const books = [
-  { author: 'Michael Crichton & James Patterson',
-    title: 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It',
-    img: './images/erupt.jpg',
-},
-{
-  author: " Pete Hegseth",
-  title: "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
-  img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
-}
-];
+// const books = [
+//   { author: 'Michael Crichton & James Patterson',
+//     title: 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It',
+//     img: './images/erupt.jpg',
+// },
+// {
+//   author: " Pete Hegseth",
+//   title: "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+//   img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+// }
+// ];
 
 // const BookList = () => {
 //   return (
@@ -445,17 +445,57 @@ const books = [
 //     </section>
 //   )
 // }; or
+// const BookList = () => {
+//   return (
+//     <section className='booklist'>
+//       {books.map((book)=>{
+//         const { img, title, author } = book;
+//         return <Book img={img} title={title} author={author}/>;
+//       })}
+//     </section>
+//   )
+// };
+//  const Book = (props) => {
+//       const { img, title, author } = props;
+//       console.log(props);
+//         return (
+//           <article className="book">
+//             <img src={img} alt={title} />
+//             <h2>{title}</h2>
+//             <h4>{author}</h4>
+//           </article>
+//     );
+// };
+
+//Key Props
+const books = [
+  {
+    author: "Michael Crichton & James Patterson",
+    title:
+      "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
+    img: "./images/erupt.jpg",
+    id: 1,
+  },
+  {
+    author: " Pete Hegseth",
+    title:
+      "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+    img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+    id: 2,
+  },
+];
 const BookList = () => {
   return (
     <section className='booklist'>
       {books.map((book)=>{
-        const { img, title, author } = book;
-        return <Book img={img} title={title} author={author}/>;
+        const { img, title, author, id } = book;
+        return <Book img={img} title={title} author={author}
+        key={id}/>;
       })}
     </section>
   )
 };
- const Book = (props) => {
+const Book = (props) => {
       const { img, title, author } = props;
       console.log(props);
         return (
@@ -466,7 +506,6 @@ const BookList = () => {
           </article>
     );
 };
-
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 // root.render(<Greeting />);

@@ -468,6 +468,46 @@ import './index.css';
 // };
 
 //Key Props
+// const books = [
+//   {
+//     author: "Michael Crichton & James Patterson",
+//     title:
+//       "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
+//     img: "./images/erupt.jpg",
+//     id: 1,
+//   },
+//   {
+//     author: " Pete Hegseth",
+//     title:
+//       "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+//     img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+//     id: 2,
+//   },
+// ];
+// const BookList = () => {
+//   return (
+//     <section className='booklist'>
+//       {books.map((book)=>{
+//         const { img, title, author, id } = book;
+//         return <Book img={img} title={title} author={author}
+//         key={id}/>;
+//       })}
+//     </section>
+//   )
+// };
+// const Book = (props) => {
+//       const { img, title, author } = props;
+//       console.log(props);
+//         return (
+//           <article className="book">
+//             <img src={img} alt={title} />
+//             <h2>{title}</h2>
+//             <h4>{author}</h4>
+//           </article>
+//     );
+// };
+
+//Object as Props
 const books = [
   {
     author: "Michael Crichton & James Patterson",
@@ -484,19 +524,27 @@ const books = [
     id: 2,
   },
 ];
+// const BookList = () => {
+//   return (
+//     <section className='booklist'>
+//       {books.map((book)=>{
+//         const { img, title, author, id } = book;
+//         return <Book book={book} key={id} />;
+//       })}
+//     </section>
+//   )
+// }; or
 const BookList = () => {
   return (
     <section className='booklist'>
       {books.map((book)=>{
-        const { img, title, author, id } = book;
-        return <Book img={img} title={title} author={author}
-        key={id}/>;
+        return <Book book={book} key={book.id} />;
       })}
     </section>
   )
 };
 const Book = (props) => {
-      const { img, title, author } = props;
+      const { img, title, author } = props.book;
       console.log(props);
         return (
           <article className="book">
@@ -505,7 +553,20 @@ const Book = (props) => {
             <h4>{author}</h4>
           </article>
     );
-};
+};  
+// or
+// const Book = ({ book: { img, title, author } }) => {
+//         return (
+//           <article className="book">
+//             <img src={img} alt={title} />
+//             <h2>{title}</h2>
+//             <h4>{author}</h4>
+//           </article>
+//     );
+// };
+
+//Using Spread Operator to return Props as Object
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 // root.render(<Greeting />);

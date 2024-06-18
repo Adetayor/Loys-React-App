@@ -379,6 +379,47 @@ import './index.css';
 // };
 
 //Simple List
+// const books = [
+//   { author: 'Michael Crichton & James Patterson',
+//     title: 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It',
+//     img: './images/erupt.jpg',
+// },
+// {
+//   author: " Pete Hegseth",
+//   title: "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+//   img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+// }
+// ];
+
+
+// const names = ['john', 'peter', 'susan'];
+// const newNames = names.map((name) => {
+//   return <h1>{name}</h1>;
+// });
+// console.log(newNames);
+// const BookList = () => {
+//   return (
+//   <section className='booklist'>
+//     {/* {newNames} */}
+//     {names.map((name) => {
+//     return <h1>{name}</h1>;
+//   })}
+//   </section>
+//   );
+// };
+//       const Book = (props) => {
+//         const { img, title, author } = props;
+//         console.log(props);
+//         return (
+//           <article className="book">
+//             <img src={img} alt={title} />
+//             <h2>{title}</h2>
+//             <h4>{author}</h4>
+//           </article>
+//     );
+// };
+
+//Proper List
 const books = [
   { author: 'Michael Crichton & James Patterson',
     title: 'Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It',
@@ -391,25 +432,32 @@ const books = [
 }
 ];
 
-
-const names = ['john', 'peter', 'susan'];
-const newNames = names.map((name) => {
-  return <h1>{name}</h1>;
-});
-console.log(newNames);
+// const BookList = () => {
+//   return (
+//     <section className='booklist'>
+//       {books.map(()=>{
+//         return <div>
+//           {/* <h2>item</h2> */}
+//           <h2>{books.title}</h2>
+//           <h2>{books.author}</h2>
+//           </div>
+//       })}
+//     </section>
+//   )
+// }; or
 const BookList = () => {
   return (
-  <section className='booklist'>
-    {/* {newNames} */}
-    {names.map((name) => {
-    return <h1>{name}</h1>;
-  })}
-  </section>
-  );
+    <section className='booklist'>
+      {books.map((book)=>{
+        const { img, title, author } = book;
+        return <Book img={img} title={title} author={author}/>;
+      })}
+    </section>
+  )
 };
-      const Book = (props) => {
-        const { img, title, author } = props;
-        console.log(props);
+ const Book = (props) => {
+      const { img, title, author } = props;
+      console.log(props);
         return (
           <article className="book">
             <img src={img} alt={title} />

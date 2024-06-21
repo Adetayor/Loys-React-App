@@ -614,6 +614,88 @@ import './index.css';
 // };  
 
 //Form Submission
+// const books = [
+//   {
+//     author: "Michael Crichton & James Patterson",
+//     title:
+//       "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
+//     img: "./images/erupt.jpg",
+//     id: 1,
+//   },
+//   {
+//     author: " Pete Hegseth",
+//     title:
+//       "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+//     img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+//     id: 2,
+//   },
+// ];
+
+// const BookList = () => {
+//   return (
+//     <section className="booklist">
+//       <EventExamples />
+//       {books.map((book) => {
+//         return <Book {...book} key={book.id} />;
+//       })}
+//     </section>
+//   );
+// };
+
+// const EventExamples = () => {
+//   const handleFormInput = (e) => {
+//     //console.log(e);
+//     console.log(e.target);
+//     console.log(e.target.name);
+//     console.log(e.target.value);
+//     //console.log("handle form input");
+//   };
+//   const handleButtonClick = () => {
+//     alert("handle button click");
+//   };
+//   const handleFormSubmission = (e) => {
+//     e.preventDefault();
+//     console.log("form submitted");
+//   };
+//   return (
+//     // <h1>events</h1>;
+//     <section>
+//       {/* <form onSubmit={handleFormSubmission}> */}
+//       <form>
+//         <h2>Typical Form</h2>
+//         <input
+//           type="text"
+//           //name="example"
+//           name="product"
+//           onChange={handleFormInput}
+//           style={{ margin: "1rem 0" }}
+//         />
+//         <button type="submit" onClick={handleFormSubmission}>
+//           submit
+//         </button>
+//         <div>
+//           <button onClick={handleButtonClick} type="button">
+//             click me
+//           </button>
+//         </div>
+//       </form>
+//     </section>
+//   );
+// };
+
+// const Book = (props) => {
+//   const { img, title, author } = props;
+//   console.log(props);
+//   return (
+//     <article className="book">
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };  
+
+//Anonymous Function (Arrow)
 const books = [
   {
     author: "Michael Crichton & James Patterson",
@@ -643,20 +725,7 @@ const BookList = () => {
 };
 
 const EventExamples = () => {
-  const handleFormInput = (e) => {
-    //console.log(e);
-    console.log(e.target);
-    console.log(e.target.name);
-    console.log(e.target.value);
-    //console.log("handle form input");
-  };
-  const handleButtonClick = () => {
-    alert("handle button click");
-  };
-  const handleFormSubmission = (e) => {
-    e.preventDefault();
-    console.log("form submitted");
-  };
+  
   return (
     // <h1>events</h1>;
     <section>
@@ -665,16 +734,15 @@ const EventExamples = () => {
         <h2>Typical Form</h2>
         <input
           type="text"
-          //name="example"
           name="product"
-          onChange={handleFormInput}
+          onChange={(e) => console.log(e.target.value)}
           style={{ margin: "1rem 0" }}
         />
-        <button type="submit" onClick={handleFormSubmission}>
+        <button type="submit">
           submit
         </button>
         <div>
-          <button onClick={handleButtonClick} type="button">
+          <button onClick={()=>console.log('click me')} type="button">
             click me
           </button>
         </div>
@@ -694,6 +762,7 @@ const Book = (props) => {
     </article>
   );
 };  
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

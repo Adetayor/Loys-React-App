@@ -507,23 +507,23 @@ import './index.css';
 //     );
 // };
 
-//Object as Props
-const books = [
-  {
-    author: "Michael Crichton & James Patterson",
-    title:
-      "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
-    img: "./images/erupt.jpg",
-    id: 1,
-  },
-  {
-    author: " Pete Hegseth",
-    title:
-      "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
-    img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
-    id: 2,
-  },
-];
+//Object as Props & Events basics
+// const books = [
+//   {
+//     author: "Michael Crichton & James Patterson",
+//     title:
+//       "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
+//     img: "./images/erupt.jpg",
+//     id: 1,
+//   },
+//   {
+//     author: " Pete Hegseth",
+//     title:
+//       "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+//     img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+//     id: 2,
+//   },
+// ];
 // const BookList = () => {
 //   return (
 //     <section className='booklist'>
@@ -565,10 +565,75 @@ const books = [
 //     );
 // };
 
-//Using Spread Operator to return Props as Object
+//Using Spread Operator to return Props as Object & Event Basics
+// const BookList = () => {
+//   return (
+//     <section className='booklist'>
+//       <EventExamples />
+//       {books.map((book) => {
+//         return <Book {...book} key={book.id} />;
+//       })}
+//     </section>
+//   );
+// };
+
+// const EventExamples = () => {
+//   const handleFormInput = () => {
+//     console.log('handle form input');
+//   };
+//   const handleButtonClick = () => {
+//     alert('handle button click');
+//   };
+//   return (
+//     // <h1>events</h1>;
+//     <section>
+//       <form>
+//         <h2>Typical Form</h2>
+//         <input
+//           type="text"
+//           name="example"
+//           onChange={handleFormInput}
+//           style={{ margin: "1rem 0" }}
+//         />
+//       </form>
+//       <button onClick={handleButtonClick}>click me</button>
+//     </section>
+//   );
+// };
+
+// const Book = (props) => {
+//   const { img, title, author } = props;
+//   console.log(props);
+//   return (
+//     <article className='book'>
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };  
+
+//Form Submission
+const books = [
+  {
+    author: "Michael Crichton & James Patterson",
+    title:
+      "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
+    img: "./images/erupt.jpg",
+    id: 1,
+  },
+  {
+    author: " Pete Hegseth",
+    title:
+      "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+    img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+    id: 2,
+  },
+];
+
 const BookList = () => {
   return (
-    <section className='booklist'>
+    <section className="booklist">
       <EventExamples />
       {books.map((book) => {
         return <Book {...book} key={book.id} />;
@@ -578,20 +643,29 @@ const BookList = () => {
 };
 
 const EventExamples = () => {
-  const handleFormInput = () => {
-    console.log('handle form input');
+  const handleFormInput = (e) => {
+    //console.log(e);
+    console.log(e.target);
+    console.log(e.target.name);
+    console.log(e.target.value);
+    //console.log("handle form input");
   };
   const handleButtonClick = () => {
-    alert('handle button click');
+    alert("handle button click");
+  };
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
+    console.log("form submitted");
   };
   return (
     // <h1>events</h1>;
     <section>
-      <form>
+      <form onSubmit={handleFormSubmission}>
         <h2>Typical Form</h2>
         <input
           type="text"
-          name="example"
+          //name="example"
+          name="product"
           onChange={handleFormInput}
           style={{ margin: "1rem 0" }}
         />
@@ -605,7 +679,7 @@ const Book = (props) => {
   const { img, title, author } = props;
   console.log(props);
   return (
-    <article className='book'>
+    <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
       <h4>{author}</h4>

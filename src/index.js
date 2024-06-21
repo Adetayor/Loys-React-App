@@ -696,6 +696,74 @@ import './index.css';
 // };  
 
 //Anonymous Function (Arrow)
+// const books = [
+//   {
+//     author: "Michael Crichton & James Patterson",
+//     title:
+//       "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
+//     img: "./images/erupt.jpg",
+//     id: 1,
+//   },
+//   {
+//     author: " Pete Hegseth",
+//     title:
+//       "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+//     img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+//     id: 2,
+//   },
+// ];
+
+// const BookList = () => {
+//   return (
+//     <section className="booklist">
+//       <EventExamples />
+//       {books.map((book) => {
+//         return <Book {...book} key={book.id} />;
+//       })}
+//     </section>
+//   );
+// };
+
+// const EventExamples = () => {
+  
+//   return (
+//     // <h1>events</h1>;
+//     <section>
+//       {/* <form onSubmit={handleFormSubmission}> */}
+//       <form>
+//         <h2>Typical Form</h2>
+//         <input
+//           type="text"
+//           name="product"
+//           onChange={(e) => console.log(e.target.value)}
+//           style={{ margin: "1rem 0" }}
+//         />
+//         <button type="submit">
+//           submit
+//         </button>
+//         <div>
+//           <button onClick={()=>console.log('click me')} type="button">
+//             click me
+//           </button>
+//         </div>
+//       </form>
+//     </section>
+//   );
+// };
+
+// const Book = (props) => {
+//   const { img, title, author } = props;
+//   console.log(props);
+//   return (
+//     <article className="book">
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };  
+
+//Components Feature
 const books = [
   {
     author: "Michael Crichton & James Patterson",
@@ -716,7 +784,6 @@ const books = [
 const BookList = () => {
   return (
     <section className="booklist">
-      <EventExamples />
       {books.map((book) => {
         return <Book {...book} key={book.id} />;
       })}
@@ -724,45 +791,21 @@ const BookList = () => {
   );
 };
 
-const EventExamples = () => {
-  
-  return (
-    // <h1>events</h1>;
-    <section>
-      {/* <form onSubmit={handleFormSubmission}> */}
-      <form>
-        <h2>Typical Form</h2>
-        <input
-          type="text"
-          name="product"
-          onChange={(e) => console.log(e.target.value)}
-          style={{ margin: "1rem 0" }}
-        />
-        <button type="submit">
-          submit
-        </button>
-        <div>
-          <button onClick={()=>console.log('click me')} type="button">
-            click me
-          </button>
-        </div>
-      </form>
-    </section>
-  );
-};
-
 const Book = (props) => {
   const { img, title, author } = props;
-  console.log(props);
+  //console.log(props);
+  const displayTitle = () => {
+    console.log(title);
+  };
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
+      <button onClick={displayTitle}>display title</button>
       <h4>{author}</h4>
     </article>
   );
-};  
-
+}; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

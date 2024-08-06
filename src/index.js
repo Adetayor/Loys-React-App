@@ -810,6 +810,101 @@ import './index.css';
 //Prop Drilling- In React you can only pass the data 
 //down from Booklist to a Book Componenet not the other way round.
 
+// const books = [
+//   {
+//     author: "Michael Crichton & James Patterson",
+//     title:
+//       "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
+//     img: "./images/erupt.jpg",
+//     id: 1,
+//   },
+//   {
+//     author: " Pete Hegseth",
+//     title:
+//       "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+//     img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+//     id: 2,
+//   },
+// ];
+
+// const BookList = () => {
+//   const someValue = 'shakeAndBake'
+//   const displayValue = () => {
+//     console.log(someValue);
+//   }
+//   return (
+//     <section className="booklist">
+//       {books.map((book) => {
+//         return <Book {...book} key={book.id} 
+//         displayValue={displayValue}/>;
+//       })}
+  
+//     </section>
+//   );
+// };
+
+// const Book = (props) => {
+//   const { img, title, author, displayValue } = props;
+//   //console.log(props);
+
+//   return (
+//     <article className="book">
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <button onClick={displayValue}>Click me</button>
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };
+
+// Get Book Function
+
+// const books = [
+//   {
+//     author: "Michael Crichton & James Patterson",
+//     title:
+//       "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
+//     img: "./images/erupt.jpg",
+//     id: 1,
+//   },
+//   {
+//     author: " Pete Hegseth",
+//     title:
+//       "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+//     img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+//     id: 2,
+//   },
+// ];
+
+// const BookList = () => {
+//   const getBook = (id) =>{
+//     const book = books.find((book)=> book.id === id)
+//     console.log(book);
+//   };
+// //  getBook(2);
+//   return (
+//     <section className="booklist">
+//       {books.map((book) => {
+//         return <Book {...book} key={book.id} getBook={getBook}/>;
+//       })}
+//     </section>
+//   );
+// };
+
+// const Book = (props) => {
+//   const { img, title, author, getBook, id } = props;
+
+//   return (
+//     <article className="book">
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <button onClick={getBook(id)}>Click me</button>
+//       //<button>Click me</button>
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };
+
 const books = [
   {
     author: "Michael Crichton & James Patterson",
@@ -828,30 +923,32 @@ const books = [
 ];
 
 const BookList = () => {
-  const someValue = 'shakeAndBake'
-  const displayValue = () => {
-    console.log(someValue);
-  }
+  const getBook = (id) => {
+    const book = books.find((book) => book.id === id);
+    console.log(book);
+  };
+  //  getBook(2);
   return (
     <section className="booklist">
       {books.map((book) => {
-        return <Book {...book} key={book.id} 
-        displayValue={displayValue}/>;
+        return <Book {...book} key={book.id} getBook={getBook} />;
       })}
-  
     </section>
   );
 };
 
 const Book = (props) => {
-  const { img, title, author, displayValue } = props;
-  //console.log(props);
+  const { img, title, author, getBook, id } = props;
 
+  const getSingleBook = () => {getBook(id);
+  };
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
-      <button onClick={displayValue}>Click me</button>
+      <button onClick={()=> getBook(id)}>Click me</button>
+   {/*<button onClick={getSingleBook(id)}>Click me</button> */}
+   {/*<button>Click me</button> */}
       <h4>{author}</h4>
     </article>
   );

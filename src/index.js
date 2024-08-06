@@ -857,7 +857,7 @@ import './index.css';
 //   );
 // };
 
-// Get Book Function
+// Complex Example (Get Book Function)
 
 // const books = [
 //   {
@@ -905,54 +905,123 @@ import './index.css';
 //   );
 // };
 
-const books = [
-  {
-    author: "Michael Crichton & James Patterson",
-    title:
-      "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
-    img: "./images/erupt.jpg",
-    id: 1,
-  },
-  {
-    author: " Pete Hegseth",
-    title:
-      "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
-    img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
-    id: 2,
-  },
-];
+// const books = [
+//   {
+//     author: "Michael Crichton & James Patterson",
+//     title:
+//       "Eruption: Following Jurassic Park, Michael Crichton Started Another Masterpiece―James Patterson Just Finished It",
+//     img: "./images/erupt.jpg",
+//     id: 1,
+//   },
+//   {
+//     author: " Pete Hegseth",
+//     title:
+//       "The War on Warriors: Behind the Betrayal of the Men Who Keep Us Free",
+//     img: "https://m.media-amazon.com/images/I/7187im2CwUL._SY342_.jpg",
+//     id: 2,
+//   },
+// ];
+
+// const BookList = () => {
+//   const getBook = (id) => {
+//     const book = books.find((book) => book.id === id);
+//     console.log(book);
+//   };
+//   //  getBook(2);
+//   return (
+//     <section className="booklist">
+//       {books.map((book) => {
+//         return <Book {...book} key={book.id} getBook={getBook} />;
+//       })}
+//     </section>
+//   );
+// };
+
+// const Book = (props) => {
+//   const { img, title, author, getBook, id } = props;
+
+//   const getSingleBook = () => {getBook(id);
+//   };
+//   return (
+//     <article className="book">
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+//       <button onClick={()=> getBook(id)}>Click me</button>
+//    {/*<button onClick={getSingleBook(id)}>Click me</button> */}
+//    {/*<button>Click me</button> */}
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };
+
+//ES6 Modules  1st Way
+// import {books} from './books'
+
+// const BookList = () => {
+  
+//   return (
+//     <section className="booklist">
+//       {books.map((book) => {
+//         return <Book {...book} key={book.id} />;
+//       })}
+//     </section>
+//   );
+// };
+
+// const Book = (props) => {
+//   const { img, title, author } = props;
+
+
+//   return (
+//     <article className="book">
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+     
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };
+
+// //2nd Way
+// import banana from "./books2";
+
+// const BookList = () => {
+//   return (
+//     <section className="booklist">
+//       {banana.map((book) => {
+//         return <Book {...book} key={book.id} />;
+//       })}
+//     </section>
+//   );
+// };
+
+// const Book = (props) => {
+//   const { img, title, author } = props;
+
+//   return (
+//     <article className="book">
+//       <img src={img} alt={title} />
+//       <h2>{title}</h2>
+
+//       <h4>{author}</h4>
+//     </article>
+//   );
+// };
+
+import { books } from "./books";
+import Book from './Book';
 
 const BookList = () => {
-  const getBook = (id) => {
-    const book = books.find((book) => book.id === id);
-    console.log(book);
-  };
-  //  getBook(2);
   return (
     <section className="booklist">
+      {/* <Book /> */}
       {books.map((book) => {
-        return <Book {...book} key={book.id} getBook={getBook} />;
+        return <Book {...book} key={book.id} />;
       })}
     </section>
   );
 };
 
-const Book = (props) => {
-  const { img, title, author, getBook, id } = props;
-
-  const getSingleBook = () => {getBook(id);
-  };
-  return (
-    <article className="book">
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <button onClick={()=> getBook(id)}>Click me</button>
-   {/*<button onClick={getSingleBook(id)}>Click me</button> */}
-   {/*<button>Click me</button> */}
-      <h4>{author}</h4>
-    </article>
-  );
-};
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

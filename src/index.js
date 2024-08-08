@@ -1011,14 +1011,28 @@ import './index.css';
 import { books } from "./books";
 import Book from './Book';
 
+// const BookList = () => {
+//   return (
+//     <section className="booklist">
+//       {/* <Book /> */}
+//       {books.map((book, index) => {
+//         return <Book {...book} key={book.id} number={index} />;
+//       })}
+//     </section>
+//   );
+// };
+
 const BookList = () => {
   return (
+  <>
+    <h1>amazon best sellers</h1>
     <section className="booklist">
       {/* <Book /> */}
       {books.map((book, index) => {
         return <Book {...book} key={book.id} number={index} />;
       })}
     </section>
+    </>
   );
 };
 
